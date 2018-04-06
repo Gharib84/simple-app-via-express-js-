@@ -1,0 +1,28 @@
+<% include header %>
+<% if (entries.length) { %>
+  <% entries.forEach(function(entry) { %>
+  <table class="table">
+
+    <!--Table header-->
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>message</th>
+            <th>date</th>
+        </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <th scope="row"></th>
+        <td><%= entry.title %></td>
+        <td><%= entry.body %></td>
+        <td><%= entry.published %></td>
+    </tr>
+    </body>
+    </table>
+  <% }) %>
+<% } else { %>   No entries! <a href="/new-entry">Add one!</a>
+<% } %>
+<% include footer %>
+
